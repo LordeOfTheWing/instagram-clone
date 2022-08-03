@@ -1,3 +1,4 @@
+import { useSession } from "next-auth/react";
 import { useEffect, useState } from "react";
 import { User } from "../types";
 import { createRandomUser, Users } from "../utils/fakeUsers";
@@ -5,6 +6,7 @@ import Story from "./Story";
 
 const Stories = () => {
   const [users, setUsers] = useState<User[]>([]);
+  const { data: session } = useSession();
 
   useEffect(() => {
     Array.from({ length: 10 }).forEach(() => {

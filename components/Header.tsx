@@ -9,8 +9,13 @@ import {
 } from "@heroicons/react/outline";
 
 import { HomeIcon } from "@heroicons/react/solid";
+import { signIn, signOut, useSession } from "next-auth/react";
+import { useRouter } from "next/router";
 
 const Header = () => {
+  const { data: session } = useSession();
+  const router = useRouter();
+
   return (
     <div
       className='shadow-sm bg-white sticky top-0 z-50 border-b
@@ -20,7 +25,9 @@ const Header = () => {
       lg:mx-auto
       '>
         {/* left */}
-        <div className='relative w-24 hidden lg:inline-grid'>
+        <div
+          onClick={() => router.push("/")}
+          className='relative w-24 hidden lg:inline-grid'>
           <Image
             src='https://links.papareact.com/ocw'
             layout='fill'
@@ -28,7 +35,9 @@ const Header = () => {
           />
         </div>
 
-        <div className='relative w-10  lg:hidden flex-shrink-0 cursor-pointer'>
+        <div
+          onClick={() => router.push("/")}
+          className='relative w-10  lg:hidden flex-shrink-0 cursor-pointer'>
           <Image
             src='https://links.papareact.com/jjm'
             layout='fill'
@@ -54,29 +63,35 @@ const Header = () => {
         </div>
         {/* right */}
         <div className='flex items-center justify-end space-x-4'>
-          <HomeIcon className='navButton' />
+          <HomeIcon onClick={() => router.push("/")} className='navButton' />
           <MenuIcon className='h-6 md:hidden cursor-pointer' />
+          {session ? (
+            <>
+              <div className='relative navButton'>
+                <PaperAirplaneIcon className='navButton rotate-45' />
+                <div
+                  className='absolute -top-2 -right-1 text-sm w-5 h-5
+              bg-red-500 rounded-full flex items-center justify-center
+              animate-pulse text-white
+              '>
+                  4
+                </div>
+              </div>
 
-          <div className='relative navButton'>
-            <PaperAirplaneIcon className='navButton rotate-45' />
-            <div
-              className='absolute -top-2 -right-1 text-sm w-5 h-5
-            bg-red-500 rounded-full flex items-center justify-center
-            animate-pulse text-white
-            '>
-              4
-            </div>
-          </div>
+              <PlusCircleIcon className='navButton' />
+              <UserGroupIcon className='navButton' />
+              <HeartIcon className='navButton' />
 
-          <PlusCircleIcon className='navButton' />
-          <UserGroupIcon className='navButton' />
-          <HeartIcon className='navButton' />
-
-          <img
-            src='https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%3Fid%3DOIP.W7DQ6ZtNtxJEJbSaXLEJ1wHaEK%26pid%3DApi&f=1'
-            alt='Profile Picture'
-            className='h-10 w-10 rounded-full cursor-pointer'
-          />
+              <img
+                onClick={signOut}
+                src={session?.user?.image!}
+                alt='Profile Picture'
+                className='h-10 w-10 rounded-full cursor-pointer'
+              />
+            </>
+          ) : (
+            <button onClick={signIn}>Sign in</button>
+          )}
         </div>
       </div>
     </div>
