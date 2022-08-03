@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { getProviders, signIn as SignIntoProvider } from "next-auth/react";
 import Header from "../../components/Header";
 
