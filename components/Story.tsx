@@ -6,6 +6,7 @@ interface Props {
 
 const Story = ({ profile }: Props) => {
   //Story component
+  //
   return (
     <div>
       <img
