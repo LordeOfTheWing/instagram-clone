@@ -11,10 +11,13 @@ import {
 import { HomeIcon } from "@heroicons/react/solid";
 import { signIn, signOut, useSession } from "next-auth/react";
 import { useRouter } from "next/router";
+import { useRecoilState } from "recoil";
+import { modalState } from "../atoms/modalAtom";
 
 const Header = () => {
   const { data: session } = useSession();
   const router = useRouter();
+  const [open, setOpen] = useRecoilState(modalState);
 
   return (
     <div
@@ -78,7 +81,10 @@ const Header = () => {
                 </div>
               </div>
 
-              <PlusCircleIcon className='navButton' />
+              <PlusCircleIcon
+                onClick={() => setOpen(true)}
+                className='navButton'
+              />
               <UserGroupIcon className='navButton' />
               <HeartIcon className='navButton' />
 
