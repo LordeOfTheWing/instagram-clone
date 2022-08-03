@@ -1,27 +1,46 @@
-# Next.js + Tailwind CSS Example
+# Instagram-Clone
 
-This example shows how to use [Tailwind CSS](https://tailwindcss.com/) [(v3.0)](https://tailwindcss.com/blog/tailwindcss-v3) with Next.js. It follows the steps outlined in the official [Tailwind docs](https://tailwindcss.com/docs/guides/nextjs).
+This is an Instagram clone made with Next.js, Firebase and Tailwind CSS. This project was made for learning Firebase Authentication, Firestore and Cloud Storage, along with Next.js, Typescript and Tailwind CSS.
 
-## Deploy your own
+## View the project live at: <https://instagram-clone-ten-green.vercel.app/>
 
-Deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=next-example) or preview live with [StackBlitz](https://stackblitz.com/github/vercel/next.js/tree/canary/examples/with-tailwindcss)
+## Authentication
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/vercel/next.js/tree/canary/examples/with-tailwindcss&project-name=with-tailwindcss&repository-name=with-tailwindcss)
+You can Sign In with a google account to access the application.
 
-## How to use
+## Features
 
-Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [npm](https://docs.npmjs.com/cli/init), [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/), or [pnpm](https://pnpm.io) to bootstrap the example:
+- Sign Up and Sign In Using Google account
+- View posts feed
+- Publish posts
+- Like and comment other user's post
+
+## Tech Stack
+
+- [Next.js](https://nextjs.org)
+- [Typescript](https://www.typescriptlang.org)
+- [Firebase](https://firebase.google.com/?hl=en)
+- [Tailwind CSS](https://tailwindcss.com)
+- [Recoil](https://recoiljs.org/)
+
+## Run the project locally
 
 ```bash
-npx create-next-app --example with-tailwindcss with-tailwindcss-app
+git clone
+cd instagram-clone
+yarn
 ```
 
-```bash
-yarn create next-app --example with-tailwindcss with-tailwindcss-app
-```
+## Preview The App
 
-```bash
-pnpm create next-app --example with-tailwindcss with-tailwindcss-app
-```
+### Sign in With Google Page
 
-Deploy it to the cloud with [Vercel](https://vercel.com/new?utm_source=github&utm_medium=readme&utm_campaign=next-example) ([Documentation](https://nextjs.org/docs/deployment)).
+![Signin](https://user-images.githubusercontent.com/53704258/182724409-86e52c31-4f41-4e0d-b167-7c68f05c4399.png)
+
+### Feed Page
+
+![Feed](https://user-images.githubusercontent.com/53704258/182724511-84ea5038-fd63-4fd0-b82f-2b0056ab0485.png)
+
+### Likes and comments feature
+
+![Likeandcomments](https://user-images.githubusercontent.com/53704258/182724578-bd477959-8e94-4428-a167-02659593f2c6.png)
