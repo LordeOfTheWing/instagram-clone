@@ -1,5 +1,4 @@
 // @ts-nocheck
-
 import { useRecoilState } from "recoil";
 import { modalState } from "../atoms/modalAtom";
 import { Dialog, Transition } from "@headlessui/react";
