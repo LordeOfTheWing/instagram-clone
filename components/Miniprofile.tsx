@@ -1,3 +1,5 @@
+// @ts-nocheck
+
 import { signOut, useSession } from "next-auth/react";
 
 const Miniprofile = () => {
